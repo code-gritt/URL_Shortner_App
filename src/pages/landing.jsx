@@ -26,7 +26,7 @@ const LandingPage = () => {
         </h2>
         <form
           onSubmit={handleShorten}
-          className="sm:h-14 flex flex-col sm:flex-row md:w-2/4 gap-2"
+          className="sm:h-14 flex sm:flex-row md:w-2/4 gap-2"
         >
           <Input
             type="url"
