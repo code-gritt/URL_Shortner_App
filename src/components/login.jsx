@@ -16,16 +16,16 @@ import useFetch from "@/hooks/use-fetch";
 import { login } from "@/db/apiAuth";
 
 const Login = () => {
-  let [searchParams] = useSearchParams();
-  const longLink = searchParams.get("createNew");
+  // let [searchParams] = useSearchParams();
+  // const longLink = searchParams.get("createNew");
 
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
   const [errors, setErrors] = useState({});
   const [formData, setFormData] = useState({
     email: "",
     password: "",
   });
-  const { fetchUser } = UrlState();
+  // const { fetchUser } = UrlState();
   const { loading, error, fn: fnLogin, data } = useFetch(login, formData);
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -36,10 +36,11 @@ const Login = () => {
   };
 
   useEffect(() => {
-    if (error === null && data) {
-      fetchUser();
-      navigate(`/dashboard?${longLink ? `createNew=${longLink}` : ""}`);
-    }
+    console.log(data);
+    // if (error === null && data) {
+    //   fetchUser();
+    //   navigate(`/dashboard?${longLink ? `createNew=${longLink}` : ""}`);
+    // }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [data]);
 
